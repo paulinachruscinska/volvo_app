@@ -1,0 +1,19 @@
+@import "settings/fonts";
+@import "settings/colors";
+
+.i1{
+  font-family: $main-font;
+}
+.i2{
+  font-family: $header-font;
+}
+.i3{
+  font-size: 3rem;
+  font-family: $header-question-font;
+  font-weight: 400;
+  letter-spacing: 3.6px;
+  line-height: 1.1;
+}
+.i4{
+  font-family: Arial,sans-serif;
+}

@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "Volvo Novum Regular";
+  src: url("//db.onlinewebfonts.com/t/25cb6845cb99afb2f536ee7861d32413.eot");
+  src: url("//db.onlinewebfonts.com/t/25cb6845cb99afb2f536ee7861d32413.eot?#iefix") format("embedded-opentype"),
+  url("//db.onlinewebfonts.com/t/25cb6845cb99afb2f536ee7861d32413.woff2") format("woff2"),
+  url("//db.onlinewebfonts.com/t/25cb6845cb99afb2f536ee7861d32413.woff") format("woff"),
+  url("//db.onlinewebfonts.com/t/25cb6845cb99afb2f536ee7861d32413.ttf") format("truetype"),
+  url("//db.onlinewebfonts.com/t/25cb6845cb99afb2f536ee7861d32413.svg#Volvo Novum") format("svg");
+}
+
+@font-face {
+  font-family: "Volvo Novum Medium";
+  src: url("//db.onlinewebfonts.com/t/c08793d7f2b705ac6969ca5944686afb.eot");
+  src: url("//db.onlinewebfonts.com/t/c08793d7f2b705ac6969ca5944686afb.eot?#iefix") format("embedded-opentype"),
+  url("//db.onlinewebfonts.com/t/c08793d7f2b705ac6969ca5944686afb.woff2") format("woff2"),
+  url("//db.onlinewebfonts.com/t/c08793d7f2b705ac6969ca5944686afb.woff") format("woff"),
+  url("//db.onlinewebfonts.com/t/c08793d7f2b705ac6969ca5944686afb.ttf") format("truetype"),
+  url("//db.onlinewebfonts.com/t/c08793d7f2b705ac6969ca5944686afb.svg#Volvo Novum Medium") format("svg");
+}
+
+@font-face {
+  font-family: "Volvo Broad Pro Digital";
+  src: url("//db.onlinewebfonts.com/t/15c5f5b189674016e0de413ca5b9da52.eot");
+  src: url("//db.onlinewebfonts.com/t/15c5f5b189674016e0de413ca5b9da52.eot?#iefix") format("embedded-opentype"),
+  url("//db.onlinewebfonts.com/t/15c5f5b189674016e0de413ca5b9da52.woff2") format("woff2"),
+  url("//db.onlinewebfonts.com/t/15c5f5b189674016e0de413ca5b9da52.woff") format("woff"),
+  url("//db.onlinewebfonts.com/t/15c5f5b189674016e0de413ca5b9da52.ttf") format("truetype"),
+  url("//db.onlinewebfonts.com/t/15c5f5b189674016e0de413ca5b9da52.svg#Volvo Broad Pro Digital") format("svg");
+}
+
+$main-font: Volvo Novum Regular,Assistant,Arial,sans-serif;
+$header-font: Volvo Novum Medium,Arial,sans-serif;
+$header-question-font: Volvo Broad Pro Digital,Volvo Novum Regular,Arial,sans-serif;
