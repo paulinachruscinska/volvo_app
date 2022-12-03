@@ -34,6 +34,11 @@
     }
   }
 }
+.more-about__box{
+  @include tablet{
+    height: 33.3333%;
+  }
+}
 
 .more-about__box--overlay{
   position: relative;
@@ -97,15 +102,20 @@
 .more-about__text{
   display: -webkit-box;
   -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.more-about__text--more{
+  display: inline;
 }
 .icon{
-  //background: url('../images/arrow.svg') no-repeat center;
-  fill: white;
-  background-size: cover;
-  width: 8.05px;
+  background-color: $background-color;
+  -webkit-mask: url('../images/arrow.svg') no-repeat center;
+  mask-size: contain;
+  width: 12px;
   height: 12px;
   margin-left: 0.625rem;
-  //display: block;
+  display: inline-block;
 }
 .more-about__box{
   &:hover{

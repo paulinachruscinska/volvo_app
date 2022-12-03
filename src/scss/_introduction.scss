@@ -1,3 +1,23 @@
+.introduction{
+  padding: 0 0.9375rem;
+  max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.introduction__main{
+  margin: 1.25rem 8.33333% 1.25rem ;
+  padding: 0 15px;
+  @include tablet{
+    width: 83.33333%;
+  }
+  @include desktop{
+    width: 66.66667%;
+  }
+}
+
 .header{
   margin-bottom: 1.335rem;
   font-size: 3rem;
@@ -16,11 +36,17 @@
   text-align: center;
 }
 .button {
+  cursor: pointer;
+  margin: 30px 0;
   background-color: $background-color;
   padding: 0.75rem 2rem;
   border: 1px solid $main-color;
   text-align: center;
   box-sizing: border-box;
+  transition: background-color 1s;
+  &:hover{
+    background-color: $background-box-color;
+  }
   .button__text {
     color: $main-color;
     position: relative;
@@ -44,8 +70,22 @@
   line-height: 1.5;
   padding: 0.215em  0 0.215em;
   margin: 0 0 0.625em;
+  @include tablet{
+    font-size: 1.5rem;
+    margin-top: 20px;
+    padding-top: 0.28667em;
+    padding-bottom: 0.26267em;
+    margin-bottom: 0.41667em;
+  }
 }
-
+.news__box{
+  cursor: pointer;
+  &:hover{
+    .news__icon{
+      padding-left: 10px;
+    }
+  }
+}
 .news__image{
   aspect-ratio: 101 / 57;
   max-width: 100%;
@@ -60,11 +100,38 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  color: $news-date-color;
+  @include tablet{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .tag{
+    text-align: left;
+    width: 40%;
+  }
 }
-.header--third{
+.news__header{
+  display: inline;
   text-align: left;
+  line-height: 1;
+}
+.news__icon{
+  background-color: $blue-arrow;
+  -webkit-mask: url('../images/arrow.svg') no-repeat center;
+  mask-size: contain;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  margin-left: 0.625rem;
+  display: inline-block;
+  transition: padding-left 0.3s ease-out;
 }
 .article__text{
   text-align: left;
   padding-bottom: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 8;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
+

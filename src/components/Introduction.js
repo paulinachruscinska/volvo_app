@@ -42,12 +42,14 @@ const news = [
 export default function Introduction(){
     return(
         <section className='introduction'>
-            <h1 className='header'>Welcome to Volvo Group</h1>
-            <p className='text'>
-                95,000 employees. 12 brands. 190 markets. Production facilities in 19 countries.
-                Trucks, buses, construction equipment and marine and industrial engines.
-                Complete solutions for financing and service. This is who we are.
-            </p>
+            <div className='introduction__main'>
+                <h1 className='header'>Welcome to Volvo Group</h1>
+                <p className='text'>
+                    95,000 employees. 12 brands. 190 markets. Production facilities in 19 countries.
+                    Trucks, buses, construction equipment and marine and industrial engines.
+                    Complete solutions for financing and service. This is who we are.
+                </p>
+            </div>
             <button className='button'>
                 <span className='button__text'>What our services and products contribute with</span>
                 <span className='button__icon'/>
@@ -61,10 +63,12 @@ export default function Introduction(){
                             <div className='news__text'>
                                 <div className='article__header'>
                                     <p className='text tag'>{item.tag}</p>
-                                    <time dateTime={item.datetime} className='text time'>{item.time}</time>
+                                    <time dateTime={item.datetime} className='text time'>{item.date}</time>
                                 </div>
-                                <h3 className='header header--third'>{item.title}</h3>
+                                <h3 className='header header--third news__header'>{item.title}</h3>
+                                <span className='news__icon'></span>
                                 <p className='text article__text'>{item.text}</p>
+
                             </div>
                         </article>
                 )

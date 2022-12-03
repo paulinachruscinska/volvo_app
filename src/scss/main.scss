@@ -6,6 +6,7 @@
 @import 'questions';
 
 body{
+  word-wrap: break-word;
   box-sizing: border-box;
   background: $background-color;
   color: $main-color;

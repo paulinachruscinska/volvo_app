@@ -52,7 +52,7 @@ export default function MoreAbout(){
                                     <h3 className='header header--third more-about__header--third'>{box.title}</h3>
                                     <p className='text more-about__text'>{box.text}</p>
                                     <p className='text more-about__text--more'>{box.more}</p>
-                                    <img className='icon' src='../images/arrow.svg'/>
+                                    <span className='icon'></span>
                             </div>
 
 
