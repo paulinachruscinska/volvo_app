@@ -1,6 +1,6 @@
 import img1 from '../images/news-image-1.png';
-import img2 from '../images/news-image-2.avif';
-import img3 from '../images/news-image-3.avif';
+import img2 from '../images/news-images-2.avif';
+import img3 from '../images/news-images-3.avif';
 const news = [
     {
         img: img1,
@@ -53,17 +53,19 @@ export default function Introduction(){
                 <span className='button__icon'/>
             </button>
             <h3 className='header--third'>News around the world</h3>
-            <section className='news'>
+            <section className='news__boxes'>
                 {news.map((item, index)=>{
                     return(
-                        <article key={index}>
-                            <img src={item.img} alt={item.alt}/>
-                            <div className='article__header'>
-                                <p className='text tag'>{item.tag}</p>
-                                <time dateTime={item.datetime} className='text time'>{item.time}</time>
+                        <article key={index} className='news__box'>
+                            <img className='news__image' src={item.img} alt={item.alt}/>
+                            <div className='news__text'>
+                                <div className='article__header'>
+                                    <p className='text tag'>{item.tag}</p>
+                                    <time dateTime={item.datetime} className='text time'>{item.time}</time>
+                                </div>
+                                <h3 className='header header--third'>{item.title}</h3>
+                                <p className='text article__text'>{item.text}</p>
                             </div>
-                            <h3 className='header header--third'>{item.title}</h3>
-                            <p className='text'>{item.text}</p>
                         </article>
                 )
                 })}
