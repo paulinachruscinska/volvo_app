@@ -1,0 +1,66 @@
+.questions {
+  margin: 1.875rem 0;
+  position: relative;
+  .questions__background{
+    background: url('../images/city.avif') center no-repeat;
+    background-size: cover;
+    height: 280px;
+    width: 100%;
+
+    @include tablet{
+      height: 250px;
+    }
+    @include desktop{
+      height: 302px;
+    }
+  }
+  .questions__box{
+    padding: 1rem;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include desktop{
+      position: absolute;
+      z-index: 1;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .header__questions{
+      margin: 0 0 0.625rem;
+      font-family: $header-question-font;
+      letter-spacing: 3.6px;
+      @include desktop{
+        color: $background-color;
+      }
+    }
+    .button{
+      box-sizing: border-box;
+      margin: 1rem 0.625rem 0.625rem;
+      padding: 0.75rem 2rem;
+      background-color: $background-color;
+      border: 1px solid $main-color;
+      font-family: $header-font;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 1s;
+      .button__icon{
+        transform: translateX(0);
+        transition: 0.3s ease-out;
+      }
+      &:hover{
+        background-color: $background-box-color;
+        .button__icon{
+          transform: translateX(5px);
+        }
+      }
+    }
+  }
+}
+@keyframes icon{
+  100%{
+    transform: translateX(5px);
+  }
+}
+
