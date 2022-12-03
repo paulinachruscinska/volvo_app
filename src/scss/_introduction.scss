@@ -1,0 +1,50 @@
+.header{
+  margin-bottom: 1.335rem;
+  font-size: 3rem;
+  font-family: $header-font;
+  line-height: 1.1;
+  text-align: center;
+  font-weight: 400;
+}
+.text{
+  padding: 0.251rem 0 0.215rem;
+  font-size: 1rem;
+  letter-spacing: -0.1px;
+  line-height: 1.5;
+  font-weight: 400;
+  text-align: center;
+}
+.button {
+  background-color: $background-color;
+  padding: 0.75rem 2rem;
+  border: 1px solid $main-color;
+  text-align: center;
+  box-sizing: border-box;
+  .button__text {
+    color: $main-color;
+    position: relative;
+    font-size: 1rem;
+    font-family: $header-font;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+    line-height: 1.5;
+  }
+    .button__icon {
+      background: url('../images/arrow.svg') no-repeat center;
+      background-size: cover;
+      width: 8.05px;
+      height: 12px;
+      margin-left: 0.625rem;
+      display: inline-block;
+    }
+}
+.header--third{
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: 0.43rem 0 0.394rem;
+}
+.news{
+  display: flex;
+  flex-direction: column;
+
+}
