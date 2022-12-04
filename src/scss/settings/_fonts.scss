@@ -1,4 +1,14 @@
 @font-face {
+  font-family: "Volvo Novum Light";
+  src: url("//db.onlinewebfonts.com/t/ba5ccffcd04561bfd40f24f63fc62b3d.eot");
+  src: url("//db.onlinewebfonts.com/t/ba5ccffcd04561bfd40f24f63fc62b3d.eot?#iefix") format("embedded-opentype"),
+  url("//db.onlinewebfonts.com/t/ba5ccffcd04561bfd40f24f63fc62b3d.woff2") format("woff2"),
+  url("//db.onlinewebfonts.com/t/ba5ccffcd04561bfd40f24f63fc62b3d.woff") format("woff"),
+  url("//db.onlinewebfonts.com/t/ba5ccffcd04561bfd40f24f63fc62b3d.ttf") format("truetype"),
+  url("//db.onlinewebfonts.com/t/ba5ccffcd04561bfd40f24f63fc62b3d.svg#Volvo Novum Light") format("svg");
+}
+
+@font-face {
   font-family: "Volvo Novum Regular";
   src: url("//db.onlinewebfonts.com/t/25cb6845cb99afb2f536ee7861d32413.eot");
   src: url("//db.onlinewebfonts.com/t/25cb6845cb99afb2f536ee7861d32413.eot?#iefix") format("embedded-opentype"),
@@ -31,3 +41,4 @@
 $main-font: Volvo Novum Regular,Assistant,Arial,sans-serif;
 $header-font: Volvo Novum Medium,Arial,sans-serif;
 $header-question-font: Volvo Broad Pro Digital,Volvo Novum Regular,Arial,sans-serif;
+$footer-font: Volvo Novum Light, Arial,sans-serif;
