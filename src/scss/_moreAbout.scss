@@ -25,6 +25,7 @@
     position: relative;
     box-sizing: border-box;
     padding: 0.46875rem 0;
+
     @media(min-width: 480px){
       width: 33.3333%;
       padding: 0.46875rem;
@@ -35,6 +36,7 @@
   }
 }
 .more-about__box{
+  overflow: hidden;
   @include tablet{
     height: 33.3333%;
   }
@@ -69,6 +71,7 @@
   object-fit: cover;
 }
 .more-about__box--text{
+  overflow: hidden;
   box-sizing: border-box;
   position: absolute;
   padding: 0 0.9375rem 0.3125rem;
