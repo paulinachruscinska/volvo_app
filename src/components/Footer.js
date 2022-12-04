@@ -1,5 +1,5 @@
-import {useState} from "react";
-import classNames from "classnames";
+
+import FooterBox from "./FooterBox";
 
 const links = [
     {
@@ -66,34 +66,14 @@ const links = [
 ]
 const footerBottomList = ['www.volvogroup.com', 'Contact us', 'Cookies', 'Privacy']
 
+
 export default function Footer(){
-    const [active, setActive] = useState('')
-    const [arrow, setArrow] = useState('')
+
     return (
         <footer>
             <div className='footer__boxes'>
             {links.map((item, index)=>{
-                return(
-                    <div className='footer__box' key={index} >
-                        <p  onClick={()=>{
-                            return (
-                                active=== '' ? setActive(item.li) : setActive(''),
-                                arrow === '' ? setArrow(item.ul) : setArrow('')
-                            )
-                        }} className={classNames('footer__box--text',{
-                            changeArrow: arrow === item.ul
-                        })}>{item.ul}</p>
-                        <ul className={classNames('footer__box--list ', 'footer__box--list' + index, {
-                             clicked: active === item.li
-                        })}>
-                            {item.li.map((list, index)=>{
-                                return (
-                                    <li className={'list list ' + index} key={index}>{list}</li>
-                                )
-                            })}
-                        </ul>
-                    </div>
-                                )
+                           return <FooterBox item={item} index={index}/>
                             })}
             </div>
                     <div className='footer__bottom'>
