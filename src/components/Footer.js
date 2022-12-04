@@ -1,3 +1,6 @@
+import {useState} from "react";
+import classNames from "classnames";
+
 const links = [
     {
         ul: 'I am looking for',
@@ -61,25 +64,48 @@ const links = [
         ]
     }
 ]
+const footerBottomList = ['www.volvogroup.com', 'Contact us', 'Cookies', 'Privacy']
 
 export default function Footer(){
+    const [active, setActive] = useState('')
+    const [arrow, setArrow] = useState('')
     return (
         <footer>
+            <div className='footer__boxes'>
             {links.map((item, index)=>{
                 return(
-                    <div className='footer__box' key={index}>
-                        <p className='footer__box--text'>{item.ul}</p>
-                        <ul className='footer__box--link'>
+                    <div className='footer__box' key={index} >
+                        <p  onClick={()=>{
+                            return (
+                                active=== '' ? setActive(item.li) : setActive(''),
+                                arrow === '' ? setArrow(item.ul) : setArrow('')
+                            )
+                        }} className={classNames('footer__box--text',{
+                            changeArrow: arrow === item.ul
+                        })}>{item.ul}</p>
+                        <ul className={classNames('footer__box--list ', 'footer__box--list' + index, {
+                             clicked: active === item.li
+                        })}>
                             {item.li.map((list, index)=>{
                                 return (
-                                    <li className={'list' + index} key={index}>{list}</li>
+                                    <li className={'list list ' + index} key={index}>{list}</li>
                                 )
                             })}
                         </ul>
                     </div>
                                 )
                             })}
-
+            </div>
+                    <div className='footer__bottom'>
+                        <ul className='footer__bottom--list'>
+                            {footerBottomList.map((list, index)=>{
+                                return(
+                                    <li key={index} className='footer__bottom--list--item'>{list}</li>
+                                )
+                            })}
+                        </ul>
+                        <p className='text footer__bottom--text'>Copyright AB Volvo</p>
+                    </div>
 
         </footer>
     )

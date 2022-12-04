@@ -1,0 +1,211 @@
+footer{
+  background-color: $background-box-color;
+  box-sizing: border-box;
+
+  .footer__boxes{
+    display: flex;
+    flex-direction: column;
+    @include desktop{
+      padding: 0 40px 30px;
+      flex-direction: row;
+    }
+  }
+  .footer__box{
+    border-bottom: 1px solid $news-date-color;
+    cursor: pointer;
+    @include desktop{
+      border-bottom: none;
+      width: 25%;
+    }
+  }
+  .footer__box--text {
+    font-family: $header-font;
+    margin: 0;
+    position: relative;
+    padding: 1.5625rem 0.9375rem 1.25rem;
+    @include desktop{
+      margin-top: 40px;
+      padding: 0.251em 0 0.215em;
+      margin-bottom: 0.625em;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 30px;
+      right: 24px;
+      background-color: $main-color;
+      -webkit-mask: url('../images/arrow.svg') no-repeat center;
+      mask-size: contain;
+      width: 20px;
+      height: 20px;
+      transform: rotate(90deg) translateY(-50%);
+      @include desktop{
+        display: none;
+      }
+    }
+  }
+    .footer__box--list{
+      margin: 0;
+      padding: 0 0.9375rem;
+      list-style-type: none;
+      display: none;
+      @include desktop{
+        display: block;
+        padding: 0;
+      }
+
+    }
+    .list{
+      padding-bottom: 1.25rem;
+      font-family: $footer-font;
+      transition: color 0.1s linear;
+      &:hover{
+        text-decoration: underline;
+        color: black;
+      }
+    }
+  .footer__bottom{
+    padding: 1.0625rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include desktop{
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 90px;
+    }
+    .footer__bottom--list{
+      display: flex;
+      flex-wrap: wrap;
+      list-style-type: none;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      .footer__bottom--list--item{
+        padding-top: 0.251em;
+        font-family: $footer-font;
+        cursor: pointer;
+        &:after{
+          content: '|';
+          font-size: 1rem;
+          margin: 0 0.625rem;
+        }
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+      .footer__bottom--list--item{
+        &:last-of-type{
+          &:after{
+            display: none;
+          }
+        }
+      }
+    }
+    .footer__bottom--text{
+      padding: 0.625rem 0 0;
+      margin: 0.625rem 0 0;
+      position: relative;
+      font-family: $footer-font;
+      &:before{
+        content: '\00a9';
+        width: 12px;
+        height: 12px;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+.clicked{
+  display: block !important;
+}
+.changeArrow {
+  &:after{
+    right: 5px !important;
+    transform: rotate(-90deg) translateY(-50%) !important;
+  }
+}
+.footer__box--list0{
+  .list7{
+    position: relative;
+    display: inline-block;
+    &:after{
+      content: '';
+      position: absolute;
+      top:28%;
+      right: -15px;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      background-color: $news-date-color;
+      mask: url('../images/export.svg')
+    }
+}
+}
+.footer__box--list2{
+  .list{
+    position: relative;
+    //display: inline-block;
+    &:after{
+      content: '';
+      position: absolute;
+      top:28%;
+      left: 96.5px;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      background-color: $news-date-color;
+      mask: url('../images/export.svg');
+    }
+  }
+  .list0, .list1, .list8{
+    &:after {
+      left: 90px;
+    }
+  }
+  .list2, .list9{
+    &:after {
+      left: 67px;
+    }
+  }
+  .list3{
+    &:after {
+      left: 87px;
+    }
+  }
+  .list5{
+    &:after {
+      left: 205px;
+    }
+  }
+  .list6{
+    &:after {
+      left: 171px;
+    }
+  }.list7{
+     &:after {
+       left: 105px;
+     }
+   }
+  .list9, .list12, .list15{
+    &:after {
+      left: 56px;
+    }
+  }.list10{
+     &:after {
+       left: 71px;
+     }
+   }
+  .list11{
+    &:after {
+      left: 120px;
+    }
+  }.list13, .list14{
+     &:after {
+       left: 50px;
+     }
+   }
+}

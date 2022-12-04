@@ -44,7 +44,7 @@ export default function MoreAbout(){
             <div className='more-about__boxes'>
                 {moreAbout.map((box, index)=>{
                     return(
-                        <div className={'more-about__box ' + box.item }>
+                        <div className={'more-about__box ' + box.item } key={index}>
                             <div className='more-about__box--overlay'>
                                 <img className='more-about__image' src={box.img} alt={box.alt}/>
                                 <div className='overlay'/>
@@ -53,11 +53,8 @@ export default function MoreAbout(){
                                     <p className='text more-about__text'>{box.text}</p>
                                     <p className='text more-about__text--more'>{box.more}</p>
                                     <span className='icon'></span>
+                                </div>
                             </div>
-
-
-                            </div>
-
                         </div>
                     )
                 })}
