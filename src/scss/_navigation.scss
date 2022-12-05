@@ -1,5 +1,11 @@
+nav{
+  border-bottom: 1px solid $background-box-color;
+
+}
 .nav__container{
+  box-sizing: border-box;
   padding: 9px 0 0;
+
   @include desktop{
     position: relative;
     display: grid;
@@ -9,7 +15,7 @@
     'boxIcons boxIcons boxIcons'
     'logo menu menu'
   ;
-    border-bottom: 1px solid $background-box-color;
+
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
@@ -136,8 +142,9 @@
   margin: 0;
   padding: 0;
   display: none;
+  overflow: scroll;
   @include desktop{
-    opacity: 0;
+    visibility: hidden;
     background-color: $background-box-color;
     position: absolute;
     display: flex;
@@ -153,6 +160,7 @@
     margin: 0 auto;
     font-size: 1rem;
     font-family: $main-font;
+    overflow: hidden;
 
   }
 
@@ -167,6 +175,7 @@
     width: 25%;
     max-width: 25%;
     padding: 0 10px 0 20px;
+    border: none;
   }
   span{
     display: block;
@@ -251,11 +260,11 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    padding-right: 15px;
     font-family: $footer-font;
     font-weight: bold;
     text-align: center;
     box-sizing: border-box;
+    flex-shrink: 1;
   }
 
 }
@@ -285,7 +294,7 @@
   @include desktop {
     &:hover {
       .nav__main--list-second {
-        opacity: 1;
+        visibility: visible;
       }
 
       .text-list {
@@ -297,4 +306,8 @@
       }
     }
   }
+}
+.notoverflow{
+  height: 100vh;
+  overflow: hidden;
 }

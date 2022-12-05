@@ -282,8 +282,8 @@ export default function Navigation(){
                             <li className='icon-search'/>
                             <li className='icon-hamburger' onClick={()=>{
                                 return (
-                                    setActiveHamburger('activeHamburger')
-                                    //return Document.querySelector('body').classList.add('.notoverflow')
+                                    setActiveHamburger('activeHamburger'),
+                                    document.body.classList.add('notoverflow')
                                 )}}/>
                         </ul>
                     </div>
@@ -314,7 +314,11 @@ export default function Navigation(){
                                 <span className='icon-contact'/>
                                 <span className='icon-text'>Contact us</span>
                             </div>
-                            <li className='icon-close' onClick={()=>{setActiveHamburger('')}}></li>
+                            <li className='icon-close' onClick={()=>{
+                                return(
+                                    setActiveHamburger(''),
+                                    document.body.classList.remove('notoverflow')
+                                )}}></li>
                         </div>
                         {nav.map((list, index)=>{
                             return (
