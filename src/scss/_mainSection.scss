@@ -1,24 +1,96 @@
 main{
+  max-width: 1200px;
+  width: 100%;
   padding: 0 0.9375rem;
-  margin: 1.875rem 0;
+  margin: 1.875rem auto;
   box-sizing: border-box;
+}
+
+.main__boxes{
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-areas:
+            "box1 box1"
+            "box2 box2"
+            "box3 box3"
+            "box4 box4"
+            "box5 box5"
+            "box6 box6"
+            "box7 box7";
+  @include tablet {
+    grid-template-areas:
+            "box1 box1"
+            "box2 box7"
+            "box4 box5"
+            "box3 box6";
+  }
   @include desktop{
-    display: grid;
+    grid-template-columns: 24% 24% 18% 17% 17%;
+    grid-template-areas:
+            "box1 box1 box1  box2 box2"
+            "box4 box5 box7 box7 box7"
+            "box3 box6 box7 box7 box7";
   }
 }
 .main__box{
-  width: 100%;
+  overflow: hidden;
+  //width: 100%;
   margin-bottom: 0.25rem;
   height: 210px;
+  margin-right: 4px;
   @include tablet{
     height: 240px;
   }
 }
-.main__box-1{
-  @include tablet{
+.main__box-1 {
+  @include tablet {
     height: 360px;
   }
+  @include desktop{
+    height: 400px;
+  }
 }
+.main__box-1{
+  grid-area: box1;
+
+}
+.main__box-2{
+  grid-area: box2;
+  @include desktop{
+    height: 400px;
+  }
+}
+.main__box-3{
+  grid-area: box3;
+  @include desktop{
+    height: 197.5px;
+  }
+}
+.main__box-4{
+  grid-area: box4;
+  @include desktop{
+    height: 197.5px;
+  }
+}
+.main__box-5{
+  grid-area: box5;
+  @include desktop{
+    height: 197.5px;
+  }
+}
+.main__box-6{
+  grid-area: box6;
+  @include desktop{
+    height: 197.5px;
+  }
+}
+.main__box-7{
+  grid-area: box7;
+  @include desktop{
+    height: 400px;
+  }
+}
+
 .main__box-1,
 .main__box-2,
 .main__box-6,

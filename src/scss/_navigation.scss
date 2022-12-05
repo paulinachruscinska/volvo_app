@@ -1,0 +1,300 @@
+.nav__container{
+  padding: 9px 0 0;
+  @include desktop{
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: 44px 1fr;
+    grid-template-areas:
+    'boxIcons boxIcons boxIcons'
+    'logo menu menu'
+  ;
+    border-bottom: 1px solid $background-box-color;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+.nav__panel{
+  grid-area: logo;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include tablet{
+    padding-left: 30px;
+  }
+  @include desktop{
+    align-items: flex-end;
+  }
+  .nav__logo{
+    padding: 1.5rem 0;
+    background: url('../images/logo.svg') center no-repeat;
+    width: 98px;
+    height: 10px;
+    @include tablet{
+      padding: 52px 0;
+    }
+    @include desktop{
+      padding: 22px 0;
+    }
+  }
+  .nav__meta__icons--phone{
+    display: flex;
+    justify-content: flex-end;
+    @include desktop{
+      display: none;
+    }
+  }
+}
+.nav__meta__icons--desktop{
+  display: none;
+  @include desktop{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 15px;
+    grid-area: boxIcons;
+  }
+}
+.icon-search{
+  -webkit-mask: url('../images/search-icon.svg') no-repeat center;
+  background-color: $news-date-color;
+  width: 25px;
+  height: 25px;
+}
+.icon-hamburger{
+  -webkit-mask: url('../images/hamburger.svg') no-repeat right;
+  background-color: $news-date-color;
+  width: 30px;
+  height: 30px;
+  padding-left: 25px;
+}
+.nav__main__icons--phone{
+  padding: 0 15px;
+  margin: 22px 0 11px;
+  display: flex;
+  justify-content: flex-end;
+  gap:7px;
+  @include desktop{
+    display: none;
+  }
+}
+.truck, .contact, .search{
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include desktop{
+    flex-direction: row;
+    padding-left: 40px;
+    padding-right: 0;
+  }
+}
+.icon-text{
+  font-size: 8px;
+  @include desktop{
+    font-size: 12px;
+  }
+}
+.icon-truck{
+  -webkit-mask: url('../images/truck-icon.svg') no-repeat center;
+  background-color: $header-color;
+  width: 26px;
+  height: 26px;
+}
+.icon-contact{
+  -webkit-mask: url('../images/envelope-icon.svg') no-repeat center;
+  background-color: $header-color;
+  width: 26px;
+  height: 26px;
+}
+.icon-close{
+  -webkit-mask: url('../images/xmark.svg') no-repeat center;
+  background-color: $news-date-color;
+  width: 26px;
+  height: 26px;
+  margin: 0 0 15px 15px;
+}
+.nav__main--list-first{
+  padding: 0;
+  margin: 0 15px;
+  border-top: 1px solid $background-box-color;
+  position: relative;
+  @include desktop{
+    position: static;
+    border: none;
+    &:hover{
+      background-color: $background-box-color;
+    }
+  }
+
+
+
+}
+.nav__main--list-second{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+  @include desktop{
+    opacity: 0;
+    background-color: $background-box-color;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    top:100%;
+    left: 0;
+    max-width: 1200px;
+    width: 100%;
+    height: 500px;
+    text-align: left;
+    margin: 0 auto;
+    font-size: 1rem;
+    font-family: $main-font;
+
+  }
+
+}
+.nav-list{
+  margin: 0 -15px;
+  border-bottom: 1px solid $background-box-color;
+  font-family: $header-font;
+  @include desktop{
+    line-height: 1.2;
+    font-weight: 400;
+    width: 25%;
+    max-width: 25%;
+    padding: 0 10px 0 20px;
+  }
+  span{
+    display: block;
+    padding: 21px 15px 22px 30px;
+  }
+}
+.nav__main--list-third{
+  padding: 0;
+  @include desktop{
+    font-family: $footer-font;
+    padding: 0 0 0 10px;
+  }
+}
+.nav-list-second{
+  margin-left: 15px;
+  list-style-type: none;
+  padding: 21px 15px 22px 30px;
+  font-family: $main-font;
+  @include desktop{
+    padding: 4.8px 15px;
+  }
+}
+.text-list{
+  margin: 0;
+  padding: 22px 0;
+  @include desktop{
+    padding: 22px 15px;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 26px;
+    right: 5px;
+    background-color: $main-color;
+    -webkit-mask: url('../images/arrow.svg') no-repeat center;
+    mask-size: contain;
+    width: 25px;
+    height: 20px;
+    transform: rotate(90deg) translateY(-50%);
+    @include desktop{
+
+      display: none;
+    }
+  }
+}
+.changearrow{
+  &:after{
+    right: -15px !important;
+    transform: rotate(-90deg) translateY(-50%) !important;
+  }
+}
+.nav__open{
+  top:0;
+  left: 0;
+  position: absolute;
+  display: none;
+  justify-content: space-between;
+  z-index: 5;
+  @include desktop{
+    display: block;
+    position: static;
+    z-index: 1;
+    grid-area: menu;
+  }
+}
+.overlay{
+  width: 0;
+  background: rgba(0,0,0,0.5);
+}
+.nav__main{
+  //display: none;
+  //position: absolute;
+  //top:0;
+  //left:100%;
+  //min-height: 100%;
+  //width: 100%;
+  //z-index: 15;
+  background-color: $background-color;
+  transition: left 0.3s ease-out;
+  @include desktop{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-right: 15px;
+    font-family: $footer-font;
+    font-weight: bold;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+}
+.nav__main--list{
+  overflow: visible;
+}
+.activeHamburger{
+  display: flex !important;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  .overlay{
+    display: block !important;
+    @include tablet {
+      width: 50%;
+    }
+  }
+  .nav__main{
+    display: block !important;
+    width: 100%;
+    @include tablet {
+      width: 50%;
+    }
+  }
+}
+.nav__main--list-first{
+  @include desktop {
+    &:hover {
+      .nav__main--list-second {
+        opacity: 1;
+      }
+
+      .text-list {
+        display: flex !important;
+      }
+
+      .nav__main--list-third {
+        display: block !important;
+      }
+    }
+  }
+}
