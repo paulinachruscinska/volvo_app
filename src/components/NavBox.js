@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import {useState} from "react";
+import { useState } from "react";
 const nav = [
     {
         first: 'FUTURE TRANSPORT',
@@ -19,7 +19,7 @@ const nav = [
             },
             {
                 second1: 'Innovation in focus',
-                second2:['Connectivity', 'Automation', 'How can I contribute?']
+                second2: ['Connectivity', 'Automation', 'How can I contribute?']
             },
             {
                 second1: 'Traffic Safety',
@@ -64,7 +64,7 @@ const nav = [
             },
             {
                 second1: 'Diversity & Inclusion',
-                second2:['Accelerating gender diversity']
+                second2: ['Accelerating gender diversity']
             },
             {
                 second1: 'Career Development',
@@ -108,7 +108,7 @@ const nav = [
             },
             {
                 second1: 'The Volvo Share',
-                second2:['Share Price Calculator', 'Ownership Information', 'Analyst Coverage', 'Conversion of Shares', 'Divident']
+                second2: ['Share Price Calculator', 'Ownership Information', 'Analyst Coverage', 'Conversion of Shares', 'Divident']
             },
             {
                 second1: 'Debt Information',
@@ -143,11 +143,11 @@ const nav = [
             },
             {
                 second1: 'Climate',
-                second2:['Reducing Carbon Emissions', 'Environmental Footprint', 'Science Based Targets']
+                second2: ['Reducing Carbon Emissions', 'Environmental Footprint', 'Science Based Targets']
             },
             {
                 second1: 'Resources',
-                second2:['Sustainable Transport System', 'Substances of concern', 'Circularity']
+                second2: ['Sustainable Transport System', 'Substances of concern', 'Circularity']
             },
             {
                 second1: 'People',
@@ -211,11 +211,11 @@ const nav = [
             },
             {
                 second1: 'Useful Links & Documents for Existing Supply Chain Partners',
-                second2:['Purchase to Pay Contact Center', 'Corporate Standards', 'EDI']
+                second2: ['Purchase to Pay Contact Center', 'Corporate Standards', 'EDI']
             },
             {
                 second1: 'Log in to Volvo Group Supplier Portal',
-                second2:['Logistics Services Portal is merged into Volvo Group Supplier Portal']
+                second2: ['Logistics Services Portal is merged into Volvo Group Supplier Portal']
             },
             {
                 second1: 'Contact us as Supply Chain Partners Volvo Group',
@@ -231,7 +231,7 @@ const nav = [
             },
             {
                 second1: 'Organization',
-                second2:['Our Global Presence', 'Other Entities', 'Our Production Facilities']
+                second2: ['Our Global Presence', 'Other Entities', 'Our Production Facilities']
             },
             {
                 second1: 'Our Mission, Vision & Aspirations',
@@ -267,49 +267,50 @@ const nav = [
     }
 ]
 
-export default function NavBox({activeHamburger, setActiveHamburger}){
+export default function NavBox({ activeHamburger, setActiveHamburger }) {
     const [active, setActive] = useState('')
     const [arrow, setArrow] = useState('')
     return (
         <div className={'nav__open ' + activeHamburger}>
-            <div className='overlay'/>
+            <div className='overlay' />
             <div className='nav__main'>
                 <div className='nav__main__icons--phone'>
                     <div className='truck'>
-                        <span className='icon-truck'/>
+                        <span className='icon-truck' />
                         <span className='icon-text'>Our brands</span>
                     </div>
                     <div className='contact'>
-                        <span className='icon-contact'/>
+                        <span className='icon-contact' />
                         <span className='icon-text'>Contact us</span>
                     </div>
-                    <li className='icon-close' onClick={()=>{
-                        return(
+                    <li className='icon-close' onClick={() => {
+                        return (
                             setActiveHamburger(''),
-                                document.body.classList.remove('notoverflow')
-                        )}}></li>
+                            document.getElementById('root').classList.remove('notoverflow')
+                        )
+                    }}></li>
                 </div>
-                {nav.map((list, index)=>{
+                {nav.map((list, index) => {
                     return (
                         <div className='nav__main--list'>
                             <div className='nav__main--list-first' key={index}>
-                                <p onClick={()=>{
+                                <p onClick={() => {
                                     return (
-                                        active=== '' ? setActive(list.second) : setActive(''),
-                                            arrow === '' ? setArrow(list.first) : setArrow('')
+                                        active === '' ? setActive(list.second) : setActive(''),
+                                        arrow === '' ? setArrow(list.first) : setArrow('')
                                     )
-                                }} className={classNames('text-list',{
+                                }} className={classNames('text-list', {
                                     changearrow: arrow === list.first
                                 })} >{list.first}</p>
                                 <ul className={classNames('nav__main--list-second', {
                                     clicked: active === list.second
                                 })}>
-                                    {list.second.map((list, index)=>{
+                                    {list.second.map((list, index) => {
                                         return (
                                             <>
                                                 <li className='nav-list' key={index}><span>{list.second1}</span>
                                                     <ul className='nav__main--list-third' >
-                                                        {Array.isArray(list.second2) && list.second2.map((item, index)=>{
+                                                        {Array.isArray(list.second2) && list.second2.map((item, index) => {
                                                             return <li className='nav-list-second' key={index}>{item}</li>
                                                         })}
                                                     </ul>

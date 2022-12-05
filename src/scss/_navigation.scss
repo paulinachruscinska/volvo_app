@@ -21,7 +21,6 @@ nav{
   }
 }
 .nav__panel{
-  cursor: pointer;
   grid-area: logo;
   //padding: 0 15px;
   display: flex;
@@ -56,7 +55,6 @@ nav{
 .nav__meta__icons--desktop{
   display: none;
   @include desktop{
-    cursor: pointer;
     display: flex;
     justify-content: flex-end;
     padding-right: 15px;
@@ -64,12 +62,14 @@ nav{
   }
 }
 .icon-search{
+  cursor: pointer;
   -webkit-mask: url('../images/search-icon.svg') no-repeat center;
   background-color: $news-date-color;
   width: 25px;
   height: 25px;
 }
 .icon-hamburger{
+  cursor: pointer;
   -webkit-mask: url('../images/hamburger.svg') no-repeat right;
   background-color: $news-date-color;
   width: 30px;
@@ -98,24 +98,28 @@ nav{
   }
 }
 .icon-text{
+  cursor: pointer;
   font-size: 8px;
   @include desktop{
     font-size: 12px;
   }
 }
 .icon-truck{
+  cursor: pointer;
   -webkit-mask: url('../images/truck-icon.svg') no-repeat center;
   background-color: $header-color;
   width: 26px;
   height: 26px;
 }
 .icon-contact{
+  cursor: pointer;
   -webkit-mask: url('../images/envelope-icon.svg') no-repeat center;
   background-color: $header-color;
   width: 26px;
   height: 26px;
 }
 .icon-close{
+  cursor: pointer;
   -webkit-mask: url('../images/xmark.svg') no-repeat center;
   background-color: $news-date-color;
   width: 26px;
@@ -143,20 +147,18 @@ nav{
   margin: 0;
   padding: 0;
   display: none;
-  overflow: scroll;
   @include desktop{
     visibility: hidden;
     background-color: $background-box-color;
     position: absolute;
     display: flex;
-    gap:0;
     flex-direction: column;
     justify-content: flex-start;
     flex-wrap: wrap;
     top:100%;
-    left: 0;
+    left: 15px;
     max-width: 1200px;
-    width: 100%;
+    width: calc(100% - 30px);
     height: 500px;
     text-align: left;
     margin: 0 auto;
@@ -164,10 +166,7 @@ nav{
     font-family: $main-font;
     overflow: hidden;
     align-content: flex-start;
-  }
-  @media(min-width: 1221px){
-    width: calc(100% - 32px);
-    left: 15px;
+
   }
 
 }
@@ -187,9 +186,6 @@ nav{
   span{
     display: block;
     padding: 21px 15px 22px 30px;
-    @include desktop{
-      padding: 15px 4.8px;
-    }
   }
 }
 .nav__main--list-third{
@@ -209,6 +205,7 @@ nav{
   }
 }
 .text-list{
+  cursor: pointer;
   margin: 0;
   padding: 22px 0;
   @include desktop{
@@ -238,7 +235,6 @@ nav{
   }
 }
 .nav__open{
-  cursor: pointer;
   top:0;
   left: 0;
   position: absolute;
@@ -257,13 +253,6 @@ nav{
   background: rgba(0,0,0,0.5);
 }
 .nav__main{
-  //display: none;
-  //position: absolute;
-  //top:0;
-  //left:100%;
-  //min-height: 100%;
-  //width: 100%;
-  //z-index: 15;
   background-color: $background-color;
   transition: left 0.3s ease-out;
   @include desktop{
@@ -287,12 +276,15 @@ nav{
   left: 0;
   width: 100%;
   min-height: 100%;
-  //flex-direction: column !important;
-  //flex-wrap: wrap;
+
+  @include tablet {
+    flex-direction: row !important;
+  }
   .overlay{
     display: block !important;
     @include tablet {
       width: 50%;
+      height: 100vh;
     }
     @include desktop{
       width: 100%;
@@ -304,6 +296,8 @@ nav{
     width: 100%;
     @include tablet {
       width: 50%;
+      height: 100vh;
+      overflow-y: auto;
     }
   }
 }

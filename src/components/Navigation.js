@@ -1,41 +1,59 @@
-import {useState} from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import NavBox from "./NavBox";
+import { createPortal } from "react-dom";
 
 
+export default function Navigation() {
+    const [activeHamburger, setActiveHamburger] = useState('')
+    let isTablet = useRef(false);
 
-export default function Navigation(){
-    const [activeHamburger, setActiveHamburger]= useState('')
-    return(
+    const isDeviceATablet = useCallback(() => {
+        isTablet.current = window.matchMedia('(min-width: 768px) and (max-width: 959px)').matches
+    }, [])
+
+    useEffect(() => {
+        window.addEventListener('resize', isDeviceATablet)
+
+        return function cleanUp() {
+            window.removeEventListener('resize', isDeviceATablet)
+        }
+    }, [isDeviceATablet])
+
+    return (
         <nav>
             <div className='nav__container'>
                 <div className='nav__panel'>
-                    <div className='nav__logo'/>
+                    <div className='nav__logo' />
                     <div className='nav__meta'>
                         <ul className='nav__meta__icons--phone'>
-                            <li className='icon-search'/>
-                            <li className='icon-hamburger' onClick={()=>{
+                            <li className='icon-search' />
+                            <li className='icon-hamburger' onClick={() => {
                                 return (
                                     setActiveHamburger('activeHamburger'),
-                                    document.body.classList.add('notoverflow')
-                                )}}/>
+                                    document.getElementById('root').classList.add('notoverflow')
+                                )
+                            }} />
                         </ul>
                     </div>
                 </div>
                 <div className='nav__meta__icons--desktop'>
                     <div className='search'>
-                        <div className='icon-search'/>
+                        <div className='icon-search' />
                         <span className='icon-text'>Search</span>
                     </div>
                     <div className='truck'>
-                        <span className='icon-truck'/>
+                        <span className='icon-truck' />
                         <span className='icon-text'>Our brands</span>
                     </div>
                     <div className='contact'>
-                        <span className='icon-contact'/>
+                        <span className='icon-contact' />
                         <span className='icon-text'>Contact us</span>
                     </div>
                 </div>
-                <NavBox activeHamburger={activeHamburger} setActiveHamburger={setActiveHamburger}/>
+                {isTablet.current
+                    ? createPortal(<NavBox activeHamburger={activeHamburger} setActiveHamburger={setActiveHamburger} />, document.body)
+                    : <NavBox activeHamburger={activeHamburger} setActiveHamburger={setActiveHamburger} />
+                }
             </div>
         </nav>
     )
