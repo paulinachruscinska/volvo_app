@@ -27,7 +27,7 @@ Projekt powstał w celu odwzorowania strony.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/paulinachruscinska/ticket_app.git
+   git clone https://github.com/paulinachruscinska/volvo_app.git
    ```
 2. Install NPM packages
    ```sh
