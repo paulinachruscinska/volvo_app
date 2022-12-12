@@ -1,3 +1,7 @@
+.headroom{
+  z-index: 100 !important;
+}
+
 .headroom--unpinned {
   @include desktop {
     transform: translateY(-74px) !important;
@@ -5,10 +9,9 @@
 }
 
 nav{
-  border-bottom: 1px solid $background-box-color;
   background: white;
-  @include desktop{
-    padding-top:30px;
+  @include desktop {
+    border-bottom: 1px solid $background-box-color;
   }
 }
 .nav__container{
@@ -27,6 +30,7 @@ nav{
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
+    padding-top: 20px;
   }
 }
 .nav__panel{
@@ -162,9 +166,10 @@ nav{
     justify-content: flex-start;
     flex-wrap: wrap;
     top:100%;
-    left: 15px;
+    //left: 15px;
+    left:0;
     max-width: 1200px;
-    width: calc(100% - 30px);
+    width: 100%;
     text-align: left;
     margin: 0 auto;
     font-size: 1rem;
@@ -172,37 +177,84 @@ nav{
     overflow: hidden;
     align-content: flex-start;
   }
+  @media(min-width: 1200px){
+    left:15px;
+    width: calc(100% - 34px);
+  }
 }
 .nav__main--list-second0{
   @include desktop {
     height: 210px;
+  }
+  .nav-list{
+    &:first-of-type{
+      @include desktop{
+        display: none;
+      }
+    }
   }
 }
 .nav__main--list-second1{
   @include desktop {
     height: 336px;
   }
+  .nav-list{
+    &:first-of-type{
+      @include desktop{
+        display: none;
+      }
+    }
+  }
 }
 .nav__main--list-second2{
   @include desktop {
     height: 546px;
+  }
+  .nav-list{
+    &:first-of-type{
+      @include desktop{
+        display: none;
+      }
+    }
   }
 }
 .nav__main--list-second3{
   @include desktop {
     height: 294px;
   }
+  .nav-list{
+    &:first-of-type{
+      @include desktop{
+        display: none;
+      }
+    }
+  }
 }
 .nav__main--list-second4{
   @include desktop {
     height: 168px;
+  }
+  .nav-list{
+    &:first-of-type{
+      @include desktop{
+        display: none;
+      }
+    }
   }
 }
 .nav__main--list-second5, .nav__main--list-second6{
   @include desktop {
     height: 252px;
   }
+  .nav-list{
+    &:first-of-type{
+      @include desktop{
+        display: none;
+      }
+    }
+  }
 }
+
 
 .nav-list{
   cursor: pointer;
@@ -219,7 +271,7 @@ nav{
   }
   span{
     display: block;
-    padding: 21px 15px 22px 30px;
+    padding: 21px 15px 10px 30px;
   }
 }
 .nav__main--list-third{
