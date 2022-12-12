@@ -11,7 +11,7 @@
 
 ## ABOUT PROJECT
 
-Projekt powstał w celu odwzorowania strony.
+Projekt powstał w celu odwzorowania strony <a href="https://www.volvogroup.com/en/">Volvo Group </a>
  
 
 
