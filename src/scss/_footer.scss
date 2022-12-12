@@ -121,6 +121,9 @@ footer{
 
 .clicked{
   display: block !important;
+  @include desktop{
+    display: flex !important;
+  }
 }
 .changeArrow {
   &:after{

@@ -1,14 +1,16 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import NavBox from "./NavBox";
 import { createPortal } from "react-dom";
+import Headroom from 'react-headroom'
 
 
 export default function Navigation() {
     const [activeHamburger, setActiveHamburger] = useState('')
     let isTablet = useRef(false);
 
+
     const isDeviceATablet = useCallback(() => {
-        isTablet.current = window.matchMedia('(min-width: 768px) and (max-width: 959px)').matches
+        isTablet.current = window.matchMedia('(max-width: 959px)').matches
     }, [])
 
     useEffect(() => {
@@ -20,6 +22,7 @@ export default function Navigation() {
     }, [isDeviceATablet])
 
     return (
+        <Headroom>
         <nav>
             <div className='nav__container'>
                 <div className='nav__panel'>
@@ -56,5 +59,6 @@ export default function Navigation() {
                 }
             </div>
         </nav>
+        </Headroom>
     )
 }

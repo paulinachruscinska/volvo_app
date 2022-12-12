@@ -167,6 +167,9 @@ main{
   padding-bottom: 1px;
   line-height: 1.5;
   margin: 0;
+  @include desktop{
+    font-size: 1.75rem;
+  }
 
 }
 .main__box--date0,

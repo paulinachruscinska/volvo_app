@@ -6,7 +6,7 @@ import classNames from "classnames";
     const [arrow, setArrow] = useState('')
     return(
         <div className='footer__box' key={index} >
-            <p  onClick={()=>{
+            <p  key={'p' + index} onClick={()=>{
                 return (
                     active=== '' ? setActive(item.li) : setActive(''),
                         arrow === '' ? setArrow(item.ul) : setArrow('')
@@ -14,7 +14,7 @@ import classNames from "classnames";
             }} className={classNames('footer__box--text',{
                 changeArrow: arrow === item.ul
             })}>{item.ul}</p>
-            <ul className={classNames('footer__box--list ', 'footer__box--list' + index, {
+            <ul key={'ul' + index} className={classNames('footer__box--list ', 'footer__box--list' + index, {
                 clicked: active === item.li
             })}>
                 {item.li.map((list, index)=>{
