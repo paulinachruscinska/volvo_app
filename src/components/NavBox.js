@@ -294,7 +294,7 @@ export default function NavBox({ activeHamburger, setActiveHamburger }) {
                     return (
                         <div className='nav__main--list'>
                             <div className='nav__main--list-first' key={index}>
-                                <p onClick={() => {
+                                <p key={index} onClick={() => {
                                     return (
                                         active === '' ? setActive(list.second) : setActive(''),
                                         arrow === '' ? setArrow(list.first) : setArrow('')
@@ -302,7 +302,7 @@ export default function NavBox({ activeHamburger, setActiveHamburger }) {
                                 }} className={classNames('text-list', {
                                     changearrow: arrow === list.first
                                 })} >{list.first}</p>
-                                <ul className={classNames('nav__main--list-second', {
+                                <ul key={'ul'+ index} className={classNames('nav__main--list-second nav__main--list-second'+ index, {
                                     clicked: active === list.second
                                 })}>
                                     {list.second.map((list, index) => {
@@ -315,7 +315,6 @@ export default function NavBox({ activeHamburger, setActiveHamburger }) {
                                                         })}
                                                     </ul>
                                                 </li>
-
                                             </>
                                         )
                                     })}
